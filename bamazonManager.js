@@ -46,6 +46,7 @@ function getProducts() {
     if (err) throw err;
     console.log("\n");
     console.table(data);
+    askQuestion();
   });
 }
 
@@ -54,6 +55,7 @@ function getLowInventory() {
     if (err) throw err;
     console.log("\n");
     console.table(data);
+    askQuestion();
   });
 }
 
@@ -81,8 +83,8 @@ function addInventory() {
         if (err) throw err;
         getProducts();
       });
-
     });
+
   });
 }
 

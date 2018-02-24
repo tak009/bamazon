@@ -72,7 +72,6 @@ function askQuestion() {
         updateInventory(id, qty, total_sales, function(err, res){
           if (err) throw err;
           displayInventory();
-
         });
       }
     });

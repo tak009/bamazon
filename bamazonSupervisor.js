@@ -36,10 +36,11 @@ function askQuestion() {
 }
 
 function viewProducts() {
-  connection.query("SELECT d.department_id, d.department_name, d.over_head_costs, p.product_sales, d.over_head_costs - p.product_sales as total_profit FROM departments as d JOIN products as p ON d.department_name = p.department_name", function(err, data) {
+  connection.query("SELECT d.department_id, d.department_name, d.over_head_costs, p.product_sales, d.over_head_costs - p.product_sales as total_profit FROM departments as d JOIN products as p ON d.department_name = p.department_name ORDER BY d.department_id", function(err, data) {
     if (err) throw err;
     console.log("\n");
     console.table(data);
+    askQuestion();
   });
 }
 
